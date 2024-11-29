@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "MdPlace",
+      "title": "Find us",
+      "details": "Lucknow Uttar Pradesh"
+    },
+    {
+      "icon": "IoCallSharp",
+      "title": "Call us",
+      "details": "9999999999"
+    },
+    {
+      "icon": "TbMailPlus",
+      "title": "Mail us",
+      "details": "contact@gmail.com"
+    }
+  ]

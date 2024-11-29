@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --background-color: #ffffff;
+  --text-primary: #212121;
+  --text-secondary: #555555;
+  --border-color: #dddddd;
+  --accent-color: #458eff;
+  --btn-hover: #82b1f8;
+  --btn-active: #0c4eb2;
+} */
