@@ -11,6 +11,8 @@ function Country() {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState();
   const [filter, setFilter] = useState("All");
+  const[CurrentPage, SetCurrentPage]= useState(1);
+  
 
   useEffect(() => {
     startTransition(async () => {
@@ -39,6 +41,25 @@ function Country() {
 
 
   const filterCountries = countries.filter((country) => searchCountry(country) && filterRegion(country));
+  const countriesPerPage = 8;
+  const indexofLastCountry=CurrentPage * countriesPerPage;
+  const indexofFirstCountry= indexofLastCountry - countriesPerPage;
+  const currentCountries= filterCountries.slice(indexofFirstCountry , indexofLastCountry)
+
+  const totalpages=Math.ceil(
+    filterCountries.length/countriesPerPage
+  );
+
+  const handleNextPage=() =>{
+    if(CurrentPage<totalpages){
+      SetCurrentPage((prev)=>prev+1);
+    }
+  }
+const handlePrevioustPage =() =>{
+  if(CurrentPage > 1){
+    SetCurrentPage((prev) => prev-1);
+  }
+}
 
   return (
     <section className='country-section'>
@@ -50,13 +71,31 @@ function Country() {
         setCountries={setCountries} />
       <ul className='grid grid-four-cols'>
         {
-          filterCountries.map((item, index) => {
+          currentCountries.map((item, index) => {
             return <CountryCard country={item} key={index} />
           })
         }
 
       </ul>
-
+      {filterCountries.length > countriesPerPage && (
+        <div className='pagination'>
+      <button 
+      onClick={handlePrevioustPage}
+      disabled={CurrentPage === 1}
+      className='pagination-btn'>
+      Prev
+      </button>
+      <span className="page-info">
+       pages {CurrentPage} of {totalpages}
+      </span>
+      <button 
+      onClick={handleNextPage}
+      disabled={CurrentPage === totalpages}
+      className='pagination-btn'>
+          Next
+      </button>
+      </div>
+      )};
     </section>
   )
 }

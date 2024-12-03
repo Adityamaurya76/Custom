@@ -730,3 +730,37 @@
     justify-content: center;
     align-items: center;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 50px;
+  }
+  
+  .pagination-btn {
+    margin-top: .5rem;
+    font-size: 1.6rem;
+    padding: 0.8rem 2rem;
+    background-color:  #202020; /* Primary button color */
+    color: #ffffff; /* White text */
+    border: 0.05rem solid #fff; /* No border */
+    border-radius: 4rem; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    text-align: center;
+   
+  }
+  
+  .pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .page-info {
+    margin: 0 10px;
+    font-size: 16px;
+    color: white;
+  }
+  
